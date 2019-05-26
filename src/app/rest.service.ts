@@ -32,6 +32,14 @@ export class RestService {
       .pipe(map(this.extractData));
   }
 
+  getKundenProfil(id): Observable<any> {
+    return this.http
+      .get(this.endpoint + id, {
+        headers: { Authorization: 'Basic YWRtaW46cA==' },
+      })
+      .pipe(map(this.extractData));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure

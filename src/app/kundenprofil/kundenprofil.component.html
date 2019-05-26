@@ -1,0 +1,9 @@
+<div *ngIf="kundenprofil">
+  <h2>{{ kundenprofil.nachname | uppercase }}</h2>
+  <div><span>Mail: </span>{{ kundenprofil.email }}</div>
+  <div>
+    <button>
+      Edit
+    </button>
+  </div>
+</div>

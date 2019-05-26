@@ -2,7 +2,7 @@
 
 <ul class="kunden">
   <li *ngFor="let k of kunden; let i = index">
-    <a routerLink="/kunde/{{ k.email }}">
+    <a routerLink="/kundenprofil/{{ k.links[0].href.split('8444/')[1] }}">
       {{ k.email }}
     </a>
   </li>
