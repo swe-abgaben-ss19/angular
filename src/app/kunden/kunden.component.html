@@ -1,3 +1,9 @@
-<p>
-  kunden works!
-</p>
+<h2>Alle Kunden</h2>
+
+<ul class="kunden">
+  <li *ngFor="let k of kunden; let i = index">
+    <a routerLink="/kunde/{{ k.email }}">
+      {{ k.email }}
+    </a>
+  </li>
+</ul>
