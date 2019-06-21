@@ -40,6 +40,18 @@ export class RestService {
       .pipe(map(this.extractData));
   }
 
+  addKunde(kunde): Observable<any> {
+    console.log(kunde);
+    return this.http
+      .post<any>(this.endpoint, JSON.stringify(kunde), {
+        headers: { Authorization: 'Basic YWRtaW46cA==' },
+      })
+      .pipe(
+        tap(product => console.log(`added kunde w/ id=${product.id}`)),
+        catchError(this.handleError<any>('addKunde'))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure

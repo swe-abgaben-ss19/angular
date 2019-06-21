@@ -1,9 +1,24 @@
-<h2>Alle Kunden</h2>
+<h2 class="text-center p-4">Alle Kunden</h2>
 
-<ul class="kunden">
-  <li *ngFor="let k of kunden; let i = index">
-    <a routerLink="/kundenprofil/{{ k.links[0].href.split('8444/')[1] }}">
-      {{ k.email }}
-    </a>
-  </li>
-</ul>
+<div class="card-columns">
+  <div class="card" *ngFor="let k of kunden; let i = index">
+    <div class="card-header text-center">
+      <a
+        routerLink="/kundenprofil/{{ k.links[0].href.split('8444/')[1] }}"
+        class="text-dark"
+      >
+        <h5 class="card-title">{{ k.nachname }}</h5>
+        <i class="fas fa-user h1"></i>
+      </a>
+    </div>
+    <div class="card-body">
+      <p><i class="fas fa-envelope"></i> {{ k.email }}</p>
+      <p>
+        <i class="fas fa-link"></i>
+        <a href="{{ k.homepage }}" target="_blank" rel="nofollow noreferrer">
+          {{ k.homepage }}</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

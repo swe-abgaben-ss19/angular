@@ -1,9 +1,16 @@
-<div *ngIf="kundenprofil">
-  <h2>{{ kundenprofil.nachname | uppercase }}</h2>
-  <div><span>Mail: </span>{{ kundenprofil.email }}</div>
-  <div>
-    <button>
-      Edit
-    </button>
+<div *ngIf="kundenprofil" class="card-deck pt-5">
+  <div class="card">
+    <div class="card-body">
+      <h2>{{ kundenprofil.nachname | uppercase }}</h2>
+      <div><span>Mail: </span>{{ kundenprofil.email }}</div>
+      <div><span>Geburtsdatum: </span>{{ kundenprofil.geburtsdatum }}</div>
+      <div><span>Geschlecht: </span>{{ kundenprofil.geschlecht }}</div>
+      <div><span>Familienstand: </span>{{ kundenprofil.familienstand }}</div>
+      <div>
+        <button>
+          Edit
+        </button>
+      </div>
+    </div>
   </div>
 </div>
